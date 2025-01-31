@@ -1,0 +1,79 @@
+{
+  "version": 1,
+  "author": "Elisson Nadson",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-pi-pico-w",
+      "id": "pico",
+      "top": 6.35,
+      "left": 3.55,
+      "attrs": { "builder": "pico-sdk" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_vermelho",
+      "top": 111.6,
+      "left": -101.8,
+      "attrs": { "color": "blue" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_amarelo",
+      "top": 159.6,
+      "left": -101.8,
+      "attrs": { "color": "red", "flip": "" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_verde",
+      "top": 207.6,
+      "left": -101.8,
+      "attrs": { "color": "green", "flip": "" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 282.35,
+      "left": -105.6,
+      "attrs": { "value": "330" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 301.55,
+      "left": -105.6,
+      "attrs": { "value": "330" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 320.75,
+      "left": -105.6,
+      "attrs": { "value": "330" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "botao",
+      "top": 35,
+      "left": -96,
+      "attrs": { "color": "black" }
+    }
+  ],
+  "connections": [
+    [ "botao:1", "pico:GP5", "blue", [ "h-10", "v-20" ] ],
+    [ "botao:2", "pico:GND.1", "black", [ "h-10", "v20" ] ],
+    [ "pico:GND.1", "botao:1.r", "black", [ "h-38.4" ] ],
+    [ "pico:GP5", "botao:2.r", "green", [ "h0" ] ],
+    [ "pico:GND.4", "r3:2", "black", [ "h-19.2", "v144.04" ] ],
+    [ "r2:2", "pico:GND.4", "black", [ "h37.2", "v-124.84" ] ],
+    [ "r1:2", "pico:GND.4", "black", [ "h37.2", "v-105.64" ] ],
+    [ "pico:GP13", "led_verde:A", "red", [ "h-28.8", "v76.84" ] ],
+    [ "pico:GP12", "led_amarelo:A", "red", [ "h-38.4", "v38.44" ] ],
+    [ "pico:GP11", "led_vermelho:A", "red", [ "h0" ] ],
+    [ "r3:1", "led_vermelho:C", "green", [ "v0", "h-28.8", "v-172.8" ] ],
+    [ "led_amarelo:C", "r2:1", "green", [ "h-47.6", "v105.6" ] ],
+    [ "led_verde:C", "r1:1", "green", [ "h-47.6", "v38.4" ] ]
+  ],
+  "dependencies": {}
+}
