@@ -28,36 +28,35 @@ set(PICO_BOARD pico_w CACHE STRING "Board type")
 # Pull in Raspberry Pi Pico SDK (must be before project)
 include(pico_sdk_import.cmake)
 
-project(temporizador-oneshot C CXX ASM)
+project(Temporizador-Oneshot-Semaforo C CXX ASM)
 
 # Initialise the Raspberry Pi Pico SDK
 pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(temporizador-oneshot temporizador-oneshot.c )
+add_executable(Temporizador-Oneshot-Semaforo Temporizador-Oneshot-Semaforo.c )
 
-pico_set_program_name(temporizador-oneshot "temporizador-oneshot")
-pico_set_program_version(temporizador-oneshot "0.1")
+pico_set_program_name(Temporizador-Oneshot-Semaforo "Temporizador-Oneshot-Semaforo")
+pico_set_program_version(Temporizador-Oneshot-Semaforo "0.1")
 
 # Modify the below lines to enable/disable output over UART/USB
-pico_enable_stdio_uart(temporizador-oneshot 0)
-pico_enable_stdio_usb(temporizador-oneshot 0)
+pico_enable_stdio_uart(Temporizador-Oneshot-Semaforo 1)
+pico_enable_stdio_usb(Temporizador-Oneshot-Semaforo 1)
 
 # Add the standard library to the build
-target_link_libraries(temporizador-oneshot
+target_link_libraries(Temporizador-Oneshot-Semaforo
         pico_stdlib)
 
 # Add the standard include files to the build
-target_include_directories(temporizador-oneshot PRIVATE
+target_include_directories(Temporizador-Oneshot-Semaforo PRIVATE
         ${CMAKE_CURRENT_LIST_DIR}
 )
 
 # Add any user requested libraries
-target_link_libraries(temporizador-oneshot 
-        hardware_timer
+target_link_libraries(Temporizador-Oneshot-Semaforo 
         
         )
 
-pico_add_extra_outputs(temporizador-oneshot)
+pico_add_extra_outputs(Temporizador-Oneshot-Semaforo)
 

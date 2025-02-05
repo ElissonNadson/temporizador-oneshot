@@ -6,27 +6,27 @@
     {
       "type": "board-pi-pico-w",
       "id": "pico",
-      "top": 6.35,
-      "left": 3.55,
+      "top": 44.75,
+      "left": 32.35,
       "attrs": { "builder": "pico-sdk" }
     },
     {
       "type": "wokwi-led",
-      "id": "led_vermelho",
+      "id": "led_blue",
       "top": 111.6,
       "left": -101.8,
       "attrs": { "color": "blue" }
     },
     {
       "type": "wokwi-led",
-      "id": "led_amarelo",
+      "id": "led_red",
       "top": 159.6,
       "left": -101.8,
       "attrs": { "color": "red", "flip": "" }
     },
     {
       "type": "wokwi-led",
-      "id": "led_verde",
+      "id": "led_green",
       "top": 207.6,
       "left": -101.8,
       "attrs": { "color": "green", "flip": "" }
@@ -55,25 +55,23 @@
     {
       "type": "wokwi-pushbutton",
       "id": "botao",
-      "top": 35,
-      "left": -96,
+      "top": 73.4,
+      "left": -76.8,
       "attrs": { "color": "black" }
     }
   ],
   "connections": [
-    [ "botao:1", "pico:GP5", "blue", [ "h-10", "v-20" ] ],
-    [ "botao:2", "pico:GND.1", "black", [ "h-10", "v20" ] ],
-    [ "pico:GND.1", "botao:1.r", "black", [ "h-38.4" ] ],
-    [ "pico:GP5", "botao:2.r", "green", [ "h0" ] ],
-    [ "pico:GND.4", "r3:2", "black", [ "h-19.2", "v144.04" ] ],
-    [ "r2:2", "pico:GND.4", "black", [ "h37.2", "v-124.84" ] ],
-    [ "r1:2", "pico:GND.4", "black", [ "h37.2", "v-105.64" ] ],
-    [ "pico:GP13", "led_verde:A", "red", [ "h-28.8", "v76.84" ] ],
-    [ "pico:GP12", "led_amarelo:A", "red", [ "h-38.4", "v38.44" ] ],
-    [ "pico:GP11", "led_vermelho:A", "red", [ "h0" ] ],
-    [ "r3:1", "led_vermelho:C", "green", [ "v0", "h-28.8", "v-172.8" ] ],
-    [ "led_amarelo:C", "r2:1", "green", [ "h-47.6", "v105.6" ] ],
-    [ "led_verde:C", "r1:1", "green", [ "h-47.6", "v38.4" ] ]
+    [ "pico:GND.1", "botao:1.r", "black", [ "h-38.4", "v-9.6" ] ],
+    [ "botao:2.r", "pico:GP5", "green", [ "h9.8", "v9.8" ] ],
+    [ "pico:GND.4", "r1:2", "black", [ "h-19.2", "v144.04" ] ],
+    [ "r2:2", "pico:GND.4", "black", [ "h66", "v-86.44" ] ],
+    [ "r3:2", "pico:GND.4", "black", [ "h66", "v-105.64" ] ],
+    [ "led_blue:C", "r1:1", "#8f4814", [ "h-47.6", "v38.4" ] ],
+    [ "led_red:C", "r2:1", "#8f4814", [ "h-47.6", "v38.4" ] ],
+    [ "led_green:C", "r3:1", "#8f4814", [ "h-47.6", "v38.4" ] ],
+    [ "led_green:A", "pico:GP13", "green", [ "h57.6", "v-38.44" ] ],
+    [ "led_red:A", "pico:GP12", "red", [ "v0" ] ],
+    [ "pico:GP11", "led_blue:A", "blue", [ "h-57.6", "v-38.4" ] ]
   ],
   "dependencies": {}
 }
