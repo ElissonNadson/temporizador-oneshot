@@ -41,6 +41,7 @@ Este projeto demonstra o uso de um temporizador de disparo único com o Pico SDK
 
 ## Instruções de Uso
 
+
 1. **Clone o Repositório:**
 
    ```bash
@@ -56,7 +57,7 @@ Inicialmente, os LEDs permanecem apagados. Ao pressionar o botão (simulado no c
 Verificação:
 Utilize o Serial Monitor para acompanhar os prints e a sequência de acionamento dos LEDs.
 
-Estrutura do Projeto
-temporizador_oneshot.c – Código fonte principal para o temporizador de disparo único.
-diagram.json – Diagrama do circuito no Wokwi.
-Arquivos de configuração (como CMakeLists.txt) para compilação.
+Fluxo do projeto
+
+![Untitled Diagram (9)](https://github.com/user-attachments/assets/42dc3e2d-3ff3-47ee-875a-36b1ea0b04ab)
+
